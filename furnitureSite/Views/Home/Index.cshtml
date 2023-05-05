@@ -1,9 +1,23 @@
 ﻿@{
+    @model PreviewModel[];
     ViewData["Title"] = "Home Page";
 }
 
-<div class="text-center">
-    <div class="preview">первый</div>
-    <div class="preview">второй</div>
-    <div class="preview">третий</div>
+<div class="main-container">
+    <div class="page-1"></div> 
+    <div class="page-2">       
+
+        @foreach(var item in Model)
+        {
+            <div class="preview">
+                <p>@item.Title</p>
+                <p>@item.Text</p>
+                <a class="button" asp-controller="@item.Link" asp-action="Index">Перейти</a>
+ @*               <div class="button" onclick="location.href='@Url.Action("Index", @item.Link)'">Перейти</div>*@
+            </div>
+        }
+    </div>
 </div>
+
+
+

@@ -15,7 +15,13 @@ namespace furnitureSite.Controllers
 
         public IActionResult Index()
         {
-            return View();
+            PreviewModel[] previews = 
+            {
+                FurnitureController.GetPreview(),
+                KitchenController.GetPreview(),
+                ConstructorController.GetPreview(),
+            };
+            return View(previews);
         }
 
         public IActionResult Cupboard() 

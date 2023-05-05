@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using furnitureSite.Models;
+using Microsoft.AspNetCore.Mvc;
 
 namespace furnitureSite.Controllers
 {
@@ -8,5 +9,12 @@ namespace furnitureSite.Controllers
         {
             return View();
         }
+
+        public static PreviewModel GetPreview()
+        {
+            return new PreviewModel("FurnitureTitle", "Furniture Text", "Furniture");
+        }
+
+
     }
 }
